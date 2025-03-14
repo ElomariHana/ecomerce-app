@@ -11,6 +11,8 @@
   <name>ecomerce-app</name>
   <modules>
     <module>api-getway</module>
+    <module>product-service</module>
+    <module>OrderService</module>
   </modules>
 
   <properties>
