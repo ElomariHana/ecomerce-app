@@ -12,7 +12,7 @@
   <modules>
     <module>api-getway</module>
     <module>product-service</module>
-    <module>OrderService</module>
+    <module>order-service</module>
     <module>discovery-service</module>
   </modules>
 
