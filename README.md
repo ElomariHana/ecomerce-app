@@ -15,3 +15,6 @@ Manages user details.
 
 Listens to Kafka for order events and sends messages via RabbitMQ for notifications.
 Uses RabbitMQ to send real-time notifications (email, SMS, push notifications).
+# Docker compose 
+docker-compose build
+docker-compose up -d
