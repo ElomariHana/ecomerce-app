@@ -1,0 +1,7 @@
+/Users/hana/Desktop/Spring/ecomerce-app/user-service/src/main/java/com/ecomerce/app/UserServiceApplication.java
+/Users/hana/Desktop/Spring/ecomerce-app/user-service/src/main/java/com/ecomerce/app/controller/UserController.java
+/Users/hana/Desktop/Spring/ecomerce-app/user-service/src/main/java/com/ecomerce/app/dto/UserRequest.java
+/Users/hana/Desktop/Spring/ecomerce-app/user-service/src/main/java/com/ecomerce/app/dto/UserResponse.java
+/Users/hana/Desktop/Spring/ecomerce-app/user-service/src/main/java/com/ecomerce/app/model/User.java
+/Users/hana/Desktop/Spring/ecomerce-app/user-service/src/main/java/com/ecomerce/app/repository/UserRepository.java
+/Users/hana/Desktop/Spring/ecomerce-app/user-service/src/main/java/com/ecomerce/app/service/UserService.java
