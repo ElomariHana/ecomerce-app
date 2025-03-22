@@ -4,8 +4,10 @@ services:
     container_name: discovery-service
     ports:
       - "8761:8761"
-    networks: microservices-net
-    environment: SPRING_PROFILES_ACTIVE=docker
+    networks:
+      - microservices-net
+    environment:
+     SPRING_PROFILES_ACTIVE: docker
   order:
     build: ./order-service
     container_name: order
@@ -13,17 +15,37 @@ services:
       - "8080:8080"
     depends_on:
       - discovery-service
-    networks: microservices-net
-    environment: SPRING_PROFILES_ACTIVE=docker
+    networks:
+      - microservices-net
+    environment:
+     SPRING_PROFILES_ACTIVE: docker
   product:
     build: ./product-service
     container_name: product
     ports:
       - "8081:8081"
-    depends-on:
+    depends_on:
       - discovery-service
-    networks: microservices-net
-    environment: SPRING_PROFILES_ACTIVE=docker
+    networks:
+      - microservices-net
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+  postgres:
+    image: postgres:15
+    container_name: postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: yourpassword
+    networks:
+      - microservices-net
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+volumes:
+  postgres-data:
 networks:
   microservices-net:
     driver: bridge
