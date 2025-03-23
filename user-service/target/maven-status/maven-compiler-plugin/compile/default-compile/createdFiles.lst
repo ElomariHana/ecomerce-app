@@ -1,2 +1,10 @@
+com/ecomerce/app/dto/UserRequest$UserRequestBuilder.class
+com/ecomerce/app/model/User$UserBuilder.class
+com/ecomerce/app/dto/UserResponse.class
+com/ecomerce/app/model/User.class
 com/ecomerce/app/controller/UserController.class
 com/ecomerce/app/UserServiceApplication.class
+com/ecomerce/app/dto/UserResponse$UserResponseBuilder.class
+com/ecomerce/app/service/UserService.class
+com/ecomerce/app/dto/UserRequest.class
+com/ecomerce/app/repository/UserRepository.class

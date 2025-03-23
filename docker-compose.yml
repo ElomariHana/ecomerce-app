@@ -1,4 +1,18 @@
 services:
+  postgres:
+    image: postgres:15
+    container_name: postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: yourpassword
+    networks:
+      - microservices-net
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
   discovery-service:
     build: ./discovery-service
     container_name: discovery-service
@@ -30,20 +44,18 @@ services:
       - microservices-net
     environment:
       SPRING_PROFILES_ACTIVE: docker
-  postgres:
-    image: postgres:15
-    container_name: postgres
-    restart: always
+  user:
+    build: ./user-service
+    container_name: user
     ports:
-      - "5432:5432"
-    environment:
-      POSTGRES_DB: postgres
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: yourpassword
+      - "8082:8082"
+    depends_on:
+      - discovery-service
+      - postgres
     networks:
       - microservices-net
-    volumes:
-      - postgres-data:/var/lib/postgresql/data
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
 volumes:
   postgres-data:
 networks:
