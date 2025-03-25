@@ -22,6 +22,17 @@ services:
       - microservices-net
     environment:
      SPRING_PROFILES_ACTIVE: docker
+  api-gateway:
+    build: ./api-gateway
+    container_name: api-gateway
+    ports:
+      - "8083:8080"
+    depends_on:
+      - discovery-service
+    networks:
+      - microservices-net
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
   order:
     build: ./order-service
     container_name: order

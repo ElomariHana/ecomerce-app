@@ -10,7 +10,7 @@
 
   <name>ecomerce-app</name>
   <modules>
-    <module>api-getway</module>
+    <module>api-gateway</module>
     <module>product-service</module>
     <module>order-service</module>
     <module>discovery-service</module>
