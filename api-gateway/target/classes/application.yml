@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8083
 spring:
   main:
     web-application-type: reactive
@@ -12,23 +12,28 @@ spring:
           uri: lb://user-service # lb: saved in Eureka
           predicates:
             - Path=/users/**
+          filters:
+            - AddRequestHeader=Content-Type, application/json
 
         - id: product-service
           uri: lb://product-service
           predicates:
             - Path=/products/**
+          filters:
+            - AddRequestHeader=Content-Type, application/json
 
         - id: order-service
           uri: lb://order-service
           predicates:
             - Path=/orders/**
+          filters:
+            - AddRequestHeader=Content-Type, application/json
 management: #actuator to see all routes active
   endpoints:
     web:
       exposure:
         include: "gateway,health,info,metrics"
-
 eureka:
   client:
     service-url:
-      defaultZone: "http://eureka:password@localhost:8761/eureka"
+      defaultZone: "http://eureka:password@discovery-service:8762/eureka"

@@ -1,1 +1,3 @@
+com/ecomerce/app/JWTUtil.class
 com/ecomerce/app/ApiGatewayApplication.class
+com/ecomerce/app/SecurityConfig.class
