@@ -1,6 +1,6 @@
 services:
   postgres:
-    image: postgres:15
+    image: postgres:latest
     container_name: postgres
     restart: always
     ports:
@@ -17,16 +17,27 @@ services:
     build: ./discovery-service
     container_name: discovery-service
     ports:
-      - "8761:8761"
+      - "8762:8762"
     networks:
       - microservices-net
     environment:
      SPRING_PROFILES_ACTIVE: docker
+  api-gateway:
+    build: ./api-gateway
+    container_name: api-gateway
+    ports:
+      - "8083:8083"
+    depends_on:
+      - discovery-service
+    networks:
+      - microservices-net
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
   order:
     build: ./order-service
     container_name: order
     ports:
-      - "8080:8080"
+      - "8084:8084"
     depends_on:
       - discovery-service
     networks:
@@ -56,6 +67,9 @@ services:
       - microservices-net
     environment:
       SPRING_PROFILES_ACTIVE: docker
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/postgres
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: yourpassword
 volumes:
   postgres-data:
 networks:

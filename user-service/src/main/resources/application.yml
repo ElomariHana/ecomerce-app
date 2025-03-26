@@ -16,4 +16,4 @@ server:
 eureka:
   client:
     service-url:
-      defaultZone: "http://eureka:password@discovery-service:8761/eureka"
+      defaultZone: "http://eureka:password@discovery-service:8762/eureka"
