@@ -9,11 +9,15 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="product-service" />
+        <module name="shop-service" />
         <module name="order-service" />
         <module name="user-service" />
         <module name="api-getway" />
         <module name="discovery-service" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="api-gateway" target="21" />
+    </bytecodeTargetLevel>
   </component>
 </project>

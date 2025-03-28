@@ -27,7 +27,7 @@ Event-Driven Notifications – Send order confirmation, shipping updates, and ot
 
 Real-Time Inventory Updates – Sync stock levels across services using Kafka topics.
 
-User Activity Tracking – Log user actions like product views, searches, and clicks for analytics.
+User Activity Tracking – Log user actions like shop views, searches, and clicks for analytics.
 
 Dead Letter Queue (DLQ) – Handle failed messages by sending them to a separate Kafka topic for reprocessing.
 

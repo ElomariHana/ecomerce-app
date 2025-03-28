@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: shop
+  datasource:
+    url: jdbc:postgresql://postgres:5432/postgres
+    username: postgres
+    password: yourpassword
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update  # Use 'update', 'validate', 'create', or 'create-drop' as needed
+    show-sql: true
+server:
+  port: 8085
+eureka:
+  client:
+    service-url:
+      defaultZone: "http://eureka:password@localhost:8761/eureka"
