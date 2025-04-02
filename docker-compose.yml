@@ -33,17 +33,6 @@ services:
       - microservices-net
     environment:
      SPRING_PROFILES_ACTIVE: docker
-  product:
-    build: ./product-service
-    container_name: product
-    ports:
-      - "8081:8081"
-    depends_on:
-      - discovery-service
-    networks:
-      - microservices-net
-    environment:
-      SPRING_PROFILES_ACTIVE: docker
   user:
     build: ./user-service
     container_name: user
