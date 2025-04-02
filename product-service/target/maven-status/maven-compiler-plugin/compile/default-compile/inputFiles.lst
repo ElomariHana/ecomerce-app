@@ -1,1 +1,7 @@
-/Users/mac/Desktop/ecomerce-app/product-service/src/main/java/com/ecomerce/app/ProductSErviceApplication.java
+/Users/hana/Desktop/Spring/ecomerce-app/product-service/src/main/java/com/ecomerce/app/ProductServiceApplication.java
+/Users/hana/Desktop/Spring/ecomerce-app/product-service/src/main/java/com/ecomerce/app/controller/ProductController.java
+/Users/hana/Desktop/Spring/ecomerce-app/product-service/src/main/java/com/ecomerce/app/dto/ProductRequest.java
+/Users/hana/Desktop/Spring/ecomerce-app/product-service/src/main/java/com/ecomerce/app/dto/ProductResponse.java
+/Users/hana/Desktop/Spring/ecomerce-app/product-service/src/main/java/com/ecomerce/app/model/Product.java
+/Users/hana/Desktop/Spring/ecomerce-app/product-service/src/main/java/com/ecomerce/app/repository/ProductRepository.java
+/Users/hana/Desktop/Spring/ecomerce-app/product-service/src/main/java/com/ecomerce/app/service/ProductService.java
