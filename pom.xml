@@ -11,10 +11,10 @@
   <name>ecomerce-app</name>
   <modules>
     <module>api-getway</module>
-    <module>product-service</module>
     <module>order-service</module>
     <module>discovery-service</module>
       <module>user-service</module>
+    <module>shop-service</module>
   </modules>
 
   <properties>

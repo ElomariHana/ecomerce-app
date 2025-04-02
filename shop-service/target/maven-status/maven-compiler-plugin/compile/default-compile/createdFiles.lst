@@ -1,0 +1,10 @@
+com/ecomerce/app/dto/ShopResponse.class
+com/ecomerce/app/model/Shop$ShopBuilder.class
+com/ecomerce/app/model/Shop.class
+com/ecomerce/app/service/ShopService.class
+com/ecomerce/app/repository/ShopRepository.class
+com/ecomerce/app/controller/ShopController.class
+com/ecomerce/app/dto/ShopRequest$ShopRequestBuilder.class
+com/ecomerce/app/dto/ShopRequest.class
+com/ecomerce/app/dto/ShopResponse$ShopResponseBuilder.class
+com/ecomerce/app/ShopServiceApplication.class
