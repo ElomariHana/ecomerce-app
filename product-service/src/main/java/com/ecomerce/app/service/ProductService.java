@@ -14,16 +14,22 @@ public class ProductService {
     public ProductService(ProductRepository repository) {
         this.repository = repository;
     }
+
     public ProductResponse create(ProductRequest request) {
         Product product = Product.builder()
                 .name(request.getName())
                 .description(request.getDescription())
-                .stock(request.getStock()).build();
+                .stock(request.getStock())
+                .shopId(request.getShopId()).build();
+
         Product savedProduct = repository.save(product);
+
         return ProductResponse.builder()
                 .id(savedProduct.getId())
                 .name(savedProduct.getName())
                 .description(savedProduct.getDescription())
+                .shopId(savedProduct.getShopId())
+                .stock(savedProduct.getStock())
                 .createdAt(savedProduct.getCreatedAt())
                 .build();
     }
@@ -33,6 +39,7 @@ public class ProductService {
         product.setName(request.getName());
         product.setDescription(request.getDescription());
         product.setStock(request.getStock());
+        product.setShopId(request.getShopId());
 
         Product updatedProduct = repository.save(product);
 
@@ -41,6 +48,7 @@ public class ProductService {
                 .name(updatedProduct.getName())
                 .description(updatedProduct.getDescription())
                 .stock(updatedProduct.getStock())
+                .shopId(updatedProduct.getShopId())
                 .createdAt(updatedProduct.getCreatedAt())
                 .updatedAt(updatedProduct.getUpdatedAt())
                 .build();

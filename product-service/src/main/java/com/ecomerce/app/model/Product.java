@@ -24,6 +24,8 @@ public class Product {
     @Column(nullable = false)
     private String description;
     private Integer stock;
+    @Column(nullable = false)
+    private Long shopId;
     @CreationTimestamp
     @Column(updatable = false, name = "created_at")
     private Date createdAt;

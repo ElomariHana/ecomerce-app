@@ -9,11 +9,11 @@ spring:
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
-      ddl-auto: update  # Use 'update', 'validate', 'create', or 'create-drop' as needed
+      ddl-auto: update
     show-sql: true
 server:
-  port: 8085
+  port: 8081
 eureka:
   client:
     service-url:
-      defaultZone: "http://eureka:password@localhost:8761/eureka"
+      defaultZone: "http://eureka:password@discovery-service:8761/eureka"

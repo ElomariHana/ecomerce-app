@@ -22,22 +22,35 @@ services:
       - microservices-net
     environment:
      SPRING_PROFILES_ACTIVE: docker
-  order:
-    build: ./order-service
-    container_name: order
-    ports:
-      - "8080:8080"
-    depends_on:
-      - discovery-service
-    networks:
-      - microservices-net
-    environment:
-     SPRING_PROFILES_ACTIVE: docker
   user:
     build: ./user-service
     container_name: user
     ports:
       - "8082:8082"
+    depends_on:
+      - discovery-service
+      - postgres
+    networks:
+      - microservices-net
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+  shop:
+    build: ./shop-service
+    container_name: shop
+    ports:
+      - "8081:8081"
+    depends_on:
+      - discovery-service
+      - postgres
+    networks:
+      - microservices-net
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+  product:
+    build: ./product-service
+    container_name: product
+    ports:
+      - "8080:8080"
     depends_on:
       - discovery-service
       - postgres

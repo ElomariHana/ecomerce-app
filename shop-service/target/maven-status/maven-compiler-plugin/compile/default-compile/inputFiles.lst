@@ -1,7 +1,7 @@
-/Users/mac/Desktop/ecomerce-app/shop-service/src/main/java/com/ecomerce/app/ShopServiceApplication.java
-/Users/mac/Desktop/ecomerce-app/shop-service/src/main/java/com/ecomerce/app/controller/ShopController.java
-/Users/mac/Desktop/ecomerce-app/shop-service/src/main/java/com/ecomerce/app/dto/ShopRequest.java
-/Users/mac/Desktop/ecomerce-app/shop-service/src/main/java/com/ecomerce/app/dto/ShopResponse.java
-/Users/mac/Desktop/ecomerce-app/shop-service/src/main/java/com/ecomerce/app/model/Shop.java
-/Users/mac/Desktop/ecomerce-app/shop-service/src/main/java/com/ecomerce/app/repository/ShopRepository.java
-/Users/mac/Desktop/ecomerce-app/shop-service/src/main/java/com/ecomerce/app/service/ShopService.java
+/Users/hana/Desktop/Spring/ecomerce-app/shop-service/src/main/java/com/ecomerce/app/ShopServiceApplication.java
+/Users/hana/Desktop/Spring/ecomerce-app/shop-service/src/main/java/com/ecomerce/app/controller/ShopController.java
+/Users/hana/Desktop/Spring/ecomerce-app/shop-service/src/main/java/com/ecomerce/app/dto/ShopRequest.java
+/Users/hana/Desktop/Spring/ecomerce-app/shop-service/src/main/java/com/ecomerce/app/dto/ShopResponse.java
+/Users/hana/Desktop/Spring/ecomerce-app/shop-service/src/main/java/com/ecomerce/app/model/Shop.java
+/Users/hana/Desktop/Spring/ecomerce-app/shop-service/src/main/java/com/ecomerce/app/repository/ShopRepository.java
+/Users/hana/Desktop/Spring/ecomerce-app/shop-service/src/main/java/com/ecomerce/app/service/ShopService.java

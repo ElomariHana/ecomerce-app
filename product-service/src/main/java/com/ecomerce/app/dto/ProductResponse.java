@@ -16,6 +16,7 @@ public class ProductResponse {
     private String name;
     private String description;
     private Integer stock;
+    private Long shopId;
     private Date createdAt;
     private Date updatedAt;
 }

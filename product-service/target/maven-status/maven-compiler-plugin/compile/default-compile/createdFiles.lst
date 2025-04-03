@@ -1,2 +1,10 @@
 com/ecomerce/app/ProductServiceApplication.class
+com/ecomerce/app/service/ProductService.class
+com/ecomerce/app/dto/ProductResponse.class
+com/ecomerce/app/model/Product$ProductBuilder.class
+com/ecomerce/app/dto/ProductRequest.class
+com/ecomerce/app/model/Product.class
+com/ecomerce/app/dto/ProductRequest$ProductRequestBuilder.class
+com/ecomerce/app/dto/ProductResponse$ProductResponseBuilder.class
 com/ecomerce/app/controller/ProductController.class
+com/ecomerce/app/repository/ProductRepository.class

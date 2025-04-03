@@ -1,10 +1,10 @@
 FROM openjdk:21
 
-WORKDIR /app/shop
+WORKDIR /app/product
 
-COPY target/shop-service-1.0-SNAPSHOT.jar shop-service.jar
+COPY target/product-service-1.0-SNAPSHOT.jar product-service.jar
 
-EXPOSE 8081
+EXPOSE 8080
 
-ENTRYPOINT [ "java","-jar","shop-service.jar" ]
+ENTRYPOINT [ "java","-jar","product-service.jar" ]
 

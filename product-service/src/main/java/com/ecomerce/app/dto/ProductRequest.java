@@ -15,4 +15,5 @@ public class ProductRequest {
     private String name;
     private String description;
     private Integer stock;
+    private Long shopId;
 }
