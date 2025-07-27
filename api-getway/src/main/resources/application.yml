@@ -1,0 +1,83 @@
+server:
+  port: 8085
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: product-service
+          uri: lb://product
+          predicates:
+            - Path=/api/products/**
+          filters:
+            - StripPrefix=1
+            - name: RequestRateLimiter
+              args:
+                redis-rate-limiter.replenishRate: 10
+                redis-rate-limiter.burstCapacity: 20
+        - id: order-service
+          uri: lb://order
+          predicates:
+            - Path=/api/orders/**
+          filters:
+            - StripPrefix=1
+        - id: user-service
+          uri: lb://user
+          predicates:
+            - Path=/api/users/**
+          filters:
+            - StripPrefix=1
+        - id: shop-service
+          uri: lb://shop
+          predicates:
+            - Path=/api/shops/**
+          filters:
+            - StripPrefix=1
+        - id: discovery-service
+          uri: lb://discovery-service
+          predicates:
+            - Path=/eureka/**
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods: "*"
+            allowedHeaders: "*"
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://discovery-service:8761/eureka
+  instance:
+    prefer-ip-address: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,gateway
+  endpoint:
+    health:
+      show-details: always
+# Keycloak OAuth2 Configuration
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/ecommerce
+          jwk-set-uri: http://localhost:8080/realms/ecommerce/protocol/openid-connect/certs
+          audience: api-gateway
+
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    org.springframework.web.reactive: DEBUG
+    reactor.netty: DEBUG
+    org.springframework.security: DEBUG
+    com.ecomerce.app.filter: DEBUG
