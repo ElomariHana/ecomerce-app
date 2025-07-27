@@ -13,6 +13,17 @@ services:
       - microservices-net
     volumes:
       - postgres-data:/var/lib/postgresql/data
+  api-gateway:
+    build: ./api-getway
+    container_name: api-gateway
+    ports:
+      - "8085:8085"
+    depends_on:
+      - discovery-service
+    networks:
+      - microservices-net
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
   discovery-service:
     build: ./discovery-service
     container_name: discovery-service
@@ -58,8 +69,31 @@ services:
       - microservices-net
     environment:
       SPRING_PROFILES_ACTIVE: docker
+      
+  # Keycloak Identity and Access Management
+  keycloak:
+    image: quay.io/keycloak/keycloak:latest
+    container_name: keycloak
+    ports:
+      - "8080:8080"
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+      KC_DB: postgres
+      KC_DB_URL: jdbc:postgresql://postgres:5432/keycloak
+      KC_DB_USERNAME: postgres
+      KC_DB_PASSWORD: yourpassword
+    command: start-dev
+    depends_on:
+      - postgres
+    networks:
+      - microservices-net
+    volumes:
+      - keycloak-data:/opt/keycloak/data
+
 volumes:
   postgres-data:
+  keycloak-data:
 networks:
   microservices-net:
     driver: bridge
